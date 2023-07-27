@@ -1,0 +1,84 @@
+$brown: #7F664F;
+
+body {
+  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5fwViXdT-A78NnvsRMf9OTj3GRlUpstYfG9ERfXzrL7iSuGM8tjONlGPJdLnyoy9KTvs&usqp=CAU);
+}
+
+.container {
+  min-width: 100%;
+  height: 750px;
+  margin-top: 2.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone {
+  height: 100%;
+  width: 90%;
+  background-color: #FFFCF1;
+  border: 3px solid $brown;
+  border-radius: 5px;
+  position: relative;
+}
+
+.phone-direction {
+  display: block;
+  height: 20px;
+  width: 20px;
+  border: 3px solid #7F664F;
+  border-radius: 50%;
+  background-color: #F8CD4C;
+
+  &-1 {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
+
+  &-2 {
+    position: absolute;
+    top: 15px;
+    left: 40px;
+  }
+}
+
+.top-block {
+  background-color: #CCD5AE;
+  width: 100%;
+  height: 48px;
+  border-radius: 3px 3px 0px 0px;
+}
+
+.desktop {
+  display: none;
+}
+
+
+.search-bar {
+  border: 2px solid $brown;
+  background-color: white;
+  border-radius: 20px;
+  width: 70%;
+  margin: 0 auto;
+  color: $brown;
+  font-weight: bold;
+  padding: 4px 12px;
+  text-align: center;
+  position: relative;
+
+  i {
+    position: absolute;
+    right: 12px;
+  }
+}
+
+.content {
+  padding: 15px;
+}
+
+.footer-name {
+  color: $brown;
+  text-align: center;
+  font-weight: bold;
+}
