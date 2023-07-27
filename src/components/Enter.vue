@@ -1,5 +1,5 @@
 <template>
-  <div class="time"></div>
+  <div class="time">{{ now }}</div>
   <div class="message-box">
     <div class="box-title">
       <div>
@@ -17,17 +17,28 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref, watch } from 'vue'
+import dayjs from 'dayjs'
 
 defineProps({
   msg: String,
 });
 
+const now = ref(dayjs().format('HH:mm'))
+console.log(now.value)
+
+// onMounted(() => {
+//   time.textContent = now;
+//   setInterval(() => {
+//     time.textContent = now;
+//   }, 30000);
+// });
+
+watch();
 </script>
 
 <style scoped lang="scss">
-
-$brown: #7F664F;
+$brown: #7f664f;
 .time {
   font-weight: bold;
   font-size: 50px;
@@ -68,6 +79,4 @@ $brown: #7F664F;
     font-size: 12px;
   }
 }
-
-
 </style>
