@@ -1,12 +1,12 @@
 <template>
-  <div class="container">
+  <div class="container d-flex flex-column">
     <div class="phone">
       <span class="phone-direction phone-direction-1"></span>
       <span class="phone-direction phone-direction-2"></span>
-      <div class="top-block"></div>
+      <div class="phone-bg-block"></div>
       <Enter />
-      <div class="footer-name">@drama_</div>
     </div>
+    <div class="footer-name font-prime">@drama_amber</div>
   </div>
 </template>
 

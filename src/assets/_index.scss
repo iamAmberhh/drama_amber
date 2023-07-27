@@ -1,12 +1,11 @@
-$brown: #7F664F;
-
 body {
   background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5fwViXdT-A78NnvsRMf9OTj3GRlUpstYfG9ERfXzrL7iSuGM8tjONlGPJdLnyoy9KTvs&usqp=CAU);
+  font-family: 'Noto Sans TC', sans-serif;
 }
 
 .container {
   min-width: 100%;
-  height: 750px;
+  height: 93vh;
   margin-top: 2.5vh;
   display: flex;
   justify-content: center;
@@ -26,36 +25,29 @@ body {
   display: block;
   height: 20px;
   width: 20px;
-  border: 3px solid #7F664F;
+  border: 3px solid $brown;
   border-radius: 50%;
-  background-color: #F8CD4C;
+  background-color: $yellow;
+  position: absolute;
+  top: 15px;
 
   &-1 {
-    position: absolute;
-    top: 15px;
     left: 15px;
   }
-
   &-2 {
-    position: absolute;
-    top: 15px;
     left: 40px;
   }
 }
 
-.top-block {
-  background-color: #CCD5AE;
+.phone-bg-block {
+  background-color: $green;
   width: 100%;
   height: 48px;
   border-radius: 3px 3px 0px 0px;
 }
 
-.desktop {
-  display: none;
-}
-
-
 .search-bar {
+  display: block;
   border: 2px solid $brown;
   background-color: white;
   border-radius: 20px;
@@ -63,22 +55,20 @@ body {
   margin: 0 auto;
   color: $brown;
   font-weight: bold;
-  padding: 4px 12px;
+  padding: 6px 12px;
   text-align: center;
   position: relative;
+  font-family: 'Courier Prime', monospace;
 
-  i {
+  span {
     position: absolute;
     right: 12px;
   }
-}
 
-.content {
-  padding: 15px;
 }
 
 .footer-name {
   color: $brown;
-  text-align: center;
   font-weight: bold;
+  margin-top: 2vh;
 }
