@@ -4,14 +4,15 @@
       <span class="phone-direction phone-direction-1"></span>
       <span class="phone-direction phone-direction-2"></span>
       <div class="phone-bg-block"></div>
-      <Enter />
+      <RouterView />
     </div>
     <div class="footer-name font-prime">@drama_amber</div>
   </div>
+
 </template>
 
 <script setup>
-import Enter from '@/components/Enter.vue'
+import { RouterView } from 'vue-router';
 </script>
 
 <style lang="scss" scoped>
