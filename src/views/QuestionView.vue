@@ -25,6 +25,7 @@ const store = useStatusStore()
 
 
 const questionOne = ref({
+  number:'Q1',
   content1: '如果你是主角，',
   content2: '你覺得你的角色',
   content3: '個性會是．．．？',
@@ -46,6 +47,7 @@ const questionOneOptions = ref([
 ]);
 
 const questionTwo = ref({
+  number:'Q2',
   content1: '如果你是1l311jo3i，',
   content2: '你覺得你fefw的角色',
   content3: '個性會是．．．？',
@@ -67,6 +69,7 @@ const questionTwoOptions = ref([
 ]);
 
 const questionThree = ref({
+  number:'Q3',
   content1: '如果你是1l311jo3i，',
   content2: '你XXXXXXXfw的角色',
   content3: '個性會是．．．？',

@@ -1,6 +1,6 @@
 <template>
   <button class="search-bar">你的命定角色 <span>🔍</span></button>
-  <p class="question-mark">Q1</p>
+  <p class="question-mark">{{ title.number }}</p>
   <p class="question-content">
     {{ title.content1 }}<br />
     {{ title.content2 }}<br />

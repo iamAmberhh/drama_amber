@@ -21,7 +21,7 @@
       <h2 class="message-highlight">您已收到來自 Amber 的測驗</h2>
     </div>
   </div>
-  <router-link to="question1">
+  <router-link to="question">
     <button class="search-bar">Let's start ! <span>🔍</span></button>
   </router-link>
 </template>
