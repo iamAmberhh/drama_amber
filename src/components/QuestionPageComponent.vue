@@ -9,31 +9,19 @@
 
   <ul class="question-btn">
     <li v-for="item in options" :key="item.value">
-      <button>{{ item.label }}</button>
+      <button @click="store.answerHandler(item.value)">{{ item.label }}</button>
     </li>
   </ul>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { RouterLink } from 'vue-router';
+import { storeToRefs } from 'pinia';
+// import { ref } from 'vue';
+import { useStatusStore } from '@/store/status'
+const store = useStatusStore()
+// const { answerOne } = storeToRefs(store)
 
 defineProps(['title', 'options']);
-
-// const questionOption = ref([
-//   {
-//     label: 'A. first',
-//     value: 'A',
-//   },
-//   {
-//     label: 'B. second',
-//     value: 'B',
-//   },
-//   {
-//     label: 'B. third',
-//     value: 'B',
-//   },
-// ]);
 </script>
 
 <style scoped lang="scss">
