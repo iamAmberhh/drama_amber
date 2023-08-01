@@ -6,7 +6,7 @@
       <div class="phone-bg-block"></div>
       <RouterView />
     </div>
-    <div class="footer-name font-prime">@drama_amber</div>
+    <h1 class="footer-name font-prime">@drama_amber</h1>
   </div>
 
 </template>

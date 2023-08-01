@@ -12,6 +12,14 @@ body {
   align-items: center;
 }
 
+ul {
+	list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 .phone {
   height: 100%;
   width: 90%;
@@ -59,7 +67,6 @@ body {
   text-align: center;
   position: relative;
   font-family: 'Courier Prime', monospace;
-  box-shadow: 0em 0em 1em $yellow;
 
   span {
     position: absolute;
@@ -69,6 +76,7 @@ body {
 }
 
 .footer-name {
+  font-size: 16px;
   color: $brown;
   font-weight: bold;
   margin-top: 2vh;
