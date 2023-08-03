@@ -18,7 +18,7 @@
   <div class="position-relative mb-4" data-aos="fade-down-left">
     <img src="/polaroid-tag.png" alt="img" class="polaroid-tag" />
     <div class="character-picture">
-      <img src="/amber_img.png" alt="img" class="img-fluid" />
+      <img :src="characterPicture" alt="img" class="img-fluid" />
     </div>
     <img src="/polaroid-block.png" alt="img" class="polaroid-block" />
     <p class="character-name">{{ characterName }}</p>
@@ -37,6 +37,7 @@
 import { ref, onMounted } from 'vue';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import axios from 'axios';
 
 import { useStatusStore } from '@/store/status';
 const store = useStatusStore();
@@ -45,11 +46,13 @@ const isLoading = ref(false);
 const color = ref('#F8CD4C');
 
 const characterName = ref(undefined);
+const characterPicture = ref(undefined)
 const dramaName = ref(undefined);
 const resultContent = ref(undefined);
 
 onMounted(() => {
   AOS.init({
+    delay:500,
     duration: 1500,
     easing: 'ease',
     once: true,
@@ -59,16 +62,20 @@ onMounted(() => {
 
 const getCharacterData = () => {
   isLoading.value = true;
-  setTimeout(() => {
-    characterName.value = '#某某某';
-    dramaName.value = '這裡是劇名劇名';
-    resultContent.value =
-      '一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十';
+  const id = store.answerArr.join('')
+  axios.get(`https://drama-data.onrender.com/dramas/?id=${id}`)
+  .then(({data}) => {
+    characterName.value = `#${data[0].character}`;
+    characterPicture.value = `/${id}.jpg`;
+    dramaName.value = data[0].drama;
+    resultContent.value = data[0].content
+  }).catch((err) => {
+    console.log(err)
+  }).finally(()=> {
     isLoading.value = false;
-  }, 3000);
+  })
 };
 
-console.log(store.answerArr);
 </script>
 
 <style scoped lang="scss">
@@ -146,6 +153,9 @@ console.log(store.answerArr);
   font-weight: bold;
   letter-spacing: 1.5px;
 }
+
+
+// 以下是loading css
 @keyframes ldio-cisgxfwb7it {
   0% { opacity: 1 }
   50% { opacity: .5 }
