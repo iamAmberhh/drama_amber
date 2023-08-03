@@ -1,1 +1,0 @@
-import{k as a,r,l as u}from"./index-750e6a36.js";const l=a("status",()=>{const s=r(1),e=r([]);return{questionStatus:s,answerArr:e,answerHandler:t=>{e.value.push(t),s.value++,s.value===4&&u.push({path:"/result"})}}});export{l as u};
