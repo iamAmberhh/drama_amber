@@ -2,6 +2,7 @@ body {
   background: url(/bg-block.png);
   background-size: 150px;
   font-family: 'Noto Sans TC', sans-serif;
+  color: $brown;
 }
 
 .container {
@@ -62,13 +63,11 @@ a {
   border-radius: 20px;
   width: 70%;
   margin: 0 auto;
-  color: $brown;
   font-weight: bold;
-  padding: 6px 12px;
   text-align: center;
   position: relative;
   font-family: 'Courier Prime', monospace;
-
+  color: $brown;
   span {
     position: absolute;
     right: 12px;
@@ -78,7 +77,6 @@ a {
 
 .footer-name {
   font-size: 16px;
-  color: $brown;
   font-weight: bold;
   margin-top: 2vh;
 }

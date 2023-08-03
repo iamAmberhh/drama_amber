@@ -5,7 +5,7 @@
   >
     #drama
   </span>
-  <button class="search-bar">你的命定角色 <span>🔍</span></button>
+  <p class="search-bar">你的命定角色 <span>🔍</span></p>
   <p class="question-mark" data-aos="fade-up">{{ title.number }}</p>
   <div class="position-relative">
     <p class="question-content" data-aos="fade-up" data-aos-delay="300">
@@ -62,13 +62,15 @@ onMounted(() => {
 
 .search-bar {
   margin: 20px auto;
+  vertical-align: top;
+  padding: 5px 12px 3px 12px;
 }
 
 .question-mark {
-  font-size: 30px;
-  color: $brown;
+  font-size: 45px;
   font-weight: bold;
-  margin: 10%;
+  margin: 8%;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .question-content {
@@ -99,7 +101,6 @@ onMounted(() => {
 }
 
 .text-decoration{
-  
   color: $brown;
   width: 100px;
   height: 30px;
@@ -112,7 +113,7 @@ onMounted(() => {
   font-family: 'Mynerve', cursive;
   &-top {
     right: -5%;
-    top: 150px;
+    top: 20%;
     background: $lightGreen;
   }
   &-middle {

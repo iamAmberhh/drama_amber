@@ -64,7 +64,6 @@ onMounted(() => {
   font-weight: bold;
   font-size: 80px;
   letter-spacing: 10px;
-  color: $brown;
   text-align: center;
   margin: 20px 0px;
 }
@@ -102,7 +101,6 @@ onMounted(() => {
 }
 .fz-sm {
   font-size: 12px;
-  color: $brown;
 }
 
 @keyframes btnScale {
@@ -119,6 +117,7 @@ onMounted(() => {
 
 .search-bar {
   margin-top: 10%;
+  padding: 6px 12px;
   animation-name: btnScale;
   animation-duration: 1s;
   animation-timing-function: ease;
