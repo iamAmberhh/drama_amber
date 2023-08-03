@@ -18,20 +18,44 @@
         會是什麼樣的角色呢?<br />
         快來測驗一下自己的命定角色吧😜
       </p>
-      <h2 class="message-highlight">您已收到來自 Amber 的測驗</h2>
+      <h2
+        class="message-end"
+        data-aos="zoom-in"
+        data-aos-delay="300"
+      >您已收到來自 Amber 的邀請</h2>
     </div>
   </div>
   <router-link to="question">
-    <button class="search-bar">Let's start ! <span>🔍</span></button>
+    <button
+      class="search-bar"
+      data-aos="zoom-in"
+      data-aos-delay="1800"
+    >
+      Let's start ! <span>🔍</span>
+    </button>
   </router-link>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import dayjs from 'dayjs';
 import { RouterLink } from 'vue-router';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-const now = ref(dayjs().format('HH:mm'));
+const now = ref(undefined);
+
+onMounted(() => {
+  now.value = dayjs().format('HH:mm')
+  AOS.init(
+    {
+      duration: 1500, 
+      easing: 'ease',
+      once: true,
+    }
+  )
+})
+
 </script>
 
 <style scoped lang="scss">
@@ -68,13 +92,11 @@ const now = ref(dayjs().format('HH:mm'));
   }
 }
 
-.message-highlight {
+.message-end {
   font-size: 16px;
-  background: $green;
   color: white;
-  border-radius: 20px;
   padding: 10px;
-  margin: 20% 0 15% 0;
+  margin: 15% 0 10% 0;
   text-align: center;
   text-shadow: 0.1em 0.1em 0.2em black;
 }

@@ -1,11 +1,12 @@
 body {
-  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5fwViXdT-A78NnvsRMf9OTj3GRlUpstYfG9ERfXzrL7iSuGM8tjONlGPJdLnyoy9KTvs&usqp=CAU);
+  background: url(/bg-block.png);
+  background-size: 150px;
   font-family: 'Noto Sans TC', sans-serif;
 }
 
 .container {
   min-width: 100%;
-  height: 93vh;
+  height: 90vh;
   margin-top: 2.5vh;
   display: flex;
   justify-content: center;

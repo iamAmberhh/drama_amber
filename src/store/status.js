@@ -18,5 +18,5 @@ export const useStatusStore = defineStore('status', () => {
   }
 
 
-  return { questionStatus, answerHandler }
+  return { questionStatus, answerArr, answerHandler }
 })
