@@ -25,25 +25,36 @@
       >您已收到來自 Amber 的邀請</h2>
     </div>
   </div>
-  <router-link to="question">
-    <button
-      class="search-bar"
-      data-aos="zoom-in"
-      data-aos-delay="1800"
-    >
-      Let's start ! <span>🔍</span>
-    </button>
-  </router-link>
+  <button
+    class="search-bar"
+    data-aos="zoom-in"
+    data-aos-delay="1800"
+    @click="startGame"
+  >
+    Let's start ! <span>🔍</span>
+  </button>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
 import dayjs from 'dayjs';
-import { RouterLink } from 'vue-router';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useStatusStore } from '@/store/status';
+import router from '@/router/index';
+const store = useStatusStore();
 
 const now = ref(undefined);
+
+const startGame = () => {
+  store.questionStatus = 1
+  store.answerArr = []
+  router.push({
+    path:'/question'
+  })
+  console.log(store.answerArr)
+}
+
 
 onMounted(() => {
   now.value = dayjs().format('HH:mm')
