@@ -4,7 +4,7 @@
     :color="color"
     :is-full-page="false"
     background-color="#FFFCF1"
-    :opacity="0.9"
+    :opacity="1"
   >
     <div class="loadingio-spinner-bars-il4j9qv1op8">
       <div class="ldio-cisgxfwb7it">
@@ -38,6 +38,7 @@ import { ref, onMounted } from 'vue';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import axios from 'axios';
+import router from '@/router/index';
 
 import { useStatusStore } from '@/store/status';
 const store = useStatusStore();
@@ -63,23 +64,30 @@ onMounted(() => {
 const getCharacterData = () => {
   isLoading.value = true;
   const id = store.answerArr.join('')
-  axios.get(`https://drama-data.onrender.com/dramas/?id=${id}`)
-  .then(({data}) => {
-    characterName.value = `#${data[0].character}`;
-    characterPicture.value = `/${id}.jpg`;
-    dramaName.value = data[0].drama;
-    resultContent.value = data[0].content
-  }).catch((err) => {
-    console.log(err)
-  }).finally(()=> {
-    isLoading.value = false;
-  })
+  if(id){
+    axios.get(`https://drama-data.onrender.com/dramas/?id=${id}`)
+    .then(({data}) => {
+      characterName.value = `#${data[0].character}`;
+      characterPicture.value = `/${id}.jpg`;
+      dramaName.value = data[0].drama;
+      resultContent.value = data[0].content
+    }).catch((err) => {
+      console.log(err)
+    }).finally(()=> {
+      isLoading.value = false;
+    })
+  }else{
+    router.push({
+      path:'/'
+    })
+  }
 };
 
 </script>
 
 <style scoped lang="scss">
 @import '../assets/_color.scss';
+@import '../assets/loading';
 
 @keyframes nameMove {
   0% {
@@ -153,51 +161,4 @@ const getCharacterData = () => {
   font-weight: bold;
   letter-spacing: 1.5px;
 }
-
-
-// 以下是loading css
-@keyframes ldio-cisgxfwb7it {
-  0% { opacity: 1 }
-  50% { opacity: .5 }
-  100% { opacity: 1 }
-}
-.ldio-cisgxfwb7it div {
-  position: absolute;
-  width: 21.5px;
-  height: 86px;
-  top: 64.5px;
-  animation: ldio-cisgxfwb7it 5.2631578947368425s cubic-bezier(0.5,0,0.5,1) infinite;
-}.ldio-cisgxfwb7it div:nth-child(1) {
-  transform: translate(32.25px,0);
-  background: #f8cd4c;
-  animation-delay: -3.1578947368421053s;
-}.ldio-cisgxfwb7it div:nth-child(2) {
-  transform: translate(75.25px,0);
-  background: #7f664f;
-  animation-delay: -2.1052631578947367s;
-}.ldio-cisgxfwb7it div:nth-child(3) {
-  transform: translate(118.25px,0);
-  background: #f8cd4c;
-  animation-delay: -1.0526315789473684s;
-}.ldio-cisgxfwb7it div:nth-child(4) {
-  transform: translate(161.25px,0);
-  background: #7f664f;
-  animation-delay: -5.2631578947368425s;
-}
-.loadingio-spinner-bars-il4j9qv1op8 {
-  width: 215px;
-  height: 215px;
-  display: inline-block;
-  overflow: hidden;
-  opacity: 0.8;
-}
-.ldio-cisgxfwb7it {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform: translateZ(0) scale(1);
-  backface-visibility: hidden;
-  transform-origin: 0 0; /* see note above */
-}
-.ldio-cisgxfwb7it div { box-sizing: content-box; }
 </style>

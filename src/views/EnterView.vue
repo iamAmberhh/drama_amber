@@ -52,7 +52,6 @@ const startGame = () => {
   router.push({
     path:'/question'
   })
-  console.log(store.answerArr)
 }
 
 
