@@ -47,7 +47,7 @@ const isLoading = ref(false);
 const color = ref('#F8CD4C');
 
 const characterName = ref(undefined);
-const characterPicture = ref(undefined)
+const characterPicture = ref(undefined);
 const dramaName = ref(undefined);
 const resultContent = ref(undefined);
 
@@ -68,7 +68,7 @@ const getCharacterData = () => {
     axios.get(`https://drama-data.onrender.com/dramas/?id=${id}`)
     .then(({data}) => {
       characterName.value = `#${data[0].character}`;
-      characterPicture.value = `/${data[0].character}.png`;
+      characterPicture.value = `/drama_amber/${id}.png`;
       dramaName.value = data[0].drama;
       resultContent.value = data[0].content
     }).catch((err) => {
