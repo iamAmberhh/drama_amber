@@ -68,7 +68,7 @@ const getCharacterData = () => {
     axios.get(`https://drama-data.onrender.com/dramas/?id=${id}`)
     .then(({data}) => {
       characterName.value = `#${data[0].character}`;
-      characterPicture.value = `/${id}.jpg`;
+      characterPicture.value = `/${data[0].character}.png`;
       dramaName.value = data[0].drama;
       resultContent.value = data[0].content
     }).catch((err) => {
